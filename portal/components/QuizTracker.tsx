@@ -125,7 +125,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
 
             {/* Bot?o para avan?ar s? aparece depois que o aluno responde */}
             {isAnswered && (
-              <div className="mt-8 flex justify-end">
+              <div className="mt-8 flex Jáustify-end">
                 <button
                   onClick={handleNextQuestion}
                   className="bg-indigo-600 text-white font-black py-3 px-8 rounded-xl hover:bg-indigo-700 transition-all uppercase tracking-wide shadow-md"
@@ -144,7 +144,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
             {passed ? (
               <>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 font-medium">
-                  Excelente! Voc? atingiu a nota de corte e provou seu domínio no assunto.
+                  Excelente! você? atingiu a nota de corte e provou seu domínio no assunto.
                 </p>
                 <div className="flex flex-col items-center">
                   <button onClick={markAsComplete} className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-black text-lg py-4 px-10 rounded-xl shadow-md hover:scale-105 transition-all uppercase tracking-tight">
@@ -158,7 +158,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
             ) : (
               <>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 font-medium">
-                  Voc? precisa de pelo menos 80% para avan?ar. Revise o material e tente novamente.
+                  você? precisa de pelo menos 80% para avan?ar. Revise o material e tente novamente.
                 </p>
                 <button onClick={resetQuiz} className="inline-block bg-red-600 text-white font-black text-lg py-4 px-10 rounded-xl shadow-md hover:bg-red-700 transition-all uppercase tracking-tight">
                   Refazer Question?rio

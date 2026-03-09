@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.pathname])
 
   if (loading) {
-    return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-indigo-500 font-black tracking-widest uppercase">Validando Credenciais...</div>
+    return <div className="min-h-screen bg-slate-950 flex items-center Jáustify-center text-indigo-500 font-black tracking-widest uppercase">Validando Credenciais...</div>
   }
 
   if (!session && router.pathname !== '/login') {

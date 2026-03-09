@@ -14,11 +14,11 @@ export default function ProgressGuard({ requiredId, fallbackLink }) {
 
   if (locked) {
     return (
-      <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center justify-center text-white p-6">
+      <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center Jáustify-center text-white p-6">
         <div className="text-7xl mb-6">🏆</div>
         <h1 className="text-4xl font-black mb-4 text-center">Acesso Restrito</h1>
         <p className="text-xl text-slate-400 text-center max-w-md leading-relaxed">
-          Voc? precisa concluir a lição anterior para desbloquear esta etapa da trilha.
+          você? precisa concluir a lição anterior para desbloquear esta etapa da trilha.
         </p>
         <p className="mt-10 text-sm font-bold text-indigo-400 uppercase tracking-widest animate-pulse">
           Redirecionando de volta...
