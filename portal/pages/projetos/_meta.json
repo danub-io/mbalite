@@ -1,17 +1,17 @@
 {
-  "introducao": "1. Introdução a Projetos",
-  "ageis": "2. Metodologias Ágeis",
+  "introducao": "1. Introdu��o a Projetos",
+  "ageis": "2. Metodologias �geis",
   "scrum": "3. Framework Scrum",
   "kanban": "4. Sistema Kanban",
-  "cronograma": "5. Gestão de Cronograma",
-  "custos": "6. Gestão de Custos",
-  "riscos": "7. Gestão de Riscos",
+  "cronograma": "5. Gest�o de Cronograma",
+  "custos": "6. Gest�o de Custos",
+  "riscos": "7. Gest�o de Riscos",
   "stakeholders": "8. Partes Interessadas",
-  "comunicacao": "9. Plano de Comunicação",
+  "comunicacao": "9. Plano de Comunica��o",
   "qualidade": "10. Qualidade em Projetos",
-  "escopo": "11. Definição de Escopo",
-  "equipe": "12. Gestão da Equipe",
+  "escopo": "11. Defini��o de Escopo",
+  "equipe": "12. Gest�o da Equipe",
   "encerramento": "13. Encerramento de Projeto",
   "pmbok": "14. Guia PMBOK",
-  "sucesso": "15. Critérios de Sucesso"
+  "sucesso": "15. Crit�rios de Sucesso"
 }
