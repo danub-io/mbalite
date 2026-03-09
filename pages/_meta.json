@@ -1,5 +1,10 @@
 {
-  "index": "🏠 Início",
+  "index": {
+    "title": "💎 Landing Page",
+    "type": "page",
+    "display": "hidden"
+  },
+  "central": "🎓 Central do Aluno",
   "painel": "📊 Meu Painel",
   "qualidade": "🏆 Trilha Qualidade",
   "pessoas": "🧠 Trilha Pessoas",
