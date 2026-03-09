@@ -6,6 +6,7 @@
 module.exports = {
   ...withNextra(),
   output: 'export',
+  basePath: '/mbalite',
   images: {
     unoptimized: true,
   },
