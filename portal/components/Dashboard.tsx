@@ -61,7 +61,7 @@ export default function Dashboard() {
         <div className="mb-8 md:mb-0 text-center md:text-left z-10">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-2">Seu MBA Lite</h2>
           <p className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-widest">
-            Visão Geral Estrat?gica
+            Visão Geral Estratégica
           </p>
         </div>
         
