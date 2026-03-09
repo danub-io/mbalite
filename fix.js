@@ -5,50 +5,6 @@ const { execSync } = require('child_process');
 const ignoreDirs = ['node_modules', '.git', '.next', 'out'];
 const allowedExtensions = ['.mdx', '.tsx', '.ts', '.html', '.json'];
 
-// DICIONÁRIO DE CORREÇÕES CIRÚRGICAS
-const fixes = [
-    // Correções de Layout e Casing (o terror do preJuízo)
-    ["preJuízo", "prejuízo"],
-    ["PreJuízo", "Prejuízo"],
-    ["J? ocorreu", "já ocorreu"],
-    ["Já ocorreu", "Já ocorreu"],
-    ["s? age", "só age"],
-    ["S? age", "Só age"],
-    ["preJuizo", "prejuízo"],
-    
-    // Glossário Técnico e Quiz
-    ["diferenía", "diferença"],
-    ["temporírios", "temporários"],
-    ["alteraíío", "alteração"],
-    ["não h?", "não há"],
-    ["sinínimos", "sinônimos"],
-    [" São ", " são "],
-    ["projetos São", "projetos são"],
-    ["Processos São", "Processos são"],
-    ["Projetos São", "Projetos são"],
-    ["aíío", "ação"],
-    ["açíes", "ações"],
-    ["situaíío", "situação"],
-    ["decisíes", "decisões"],
-    ["missíes", "missões"],
-    ["opíío", "opção"],
-    ["gestío", "gestão"],
-    ["padrío", "padrão"],
-    ["prítica", "prática"],
-    ["tícnica", "técnica"],
-    ["vocí", "você"],
-    ["atí", "até"],
-    ["alím", "além"],
-    ["trís", "três"],
-    ["ínico", "único"],
-    ["estratígia", "estratégia"],
-    ["competíncia", "competência"],
-    ["lideranía", "liderança"],
-    ["liííes", "lições"],
-    ["evoluíío", "evolução"],
-    ["MBA Lite ©", "MBA Lite ©"]
-];
-
 function walkDir(dir, callback) {
     if (!fs.existsSync(dir)) return;
     fs.readdirSync(dir).forEach(f => {
@@ -67,23 +23,33 @@ function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
-    // 1. Regex para interrogações coladas (Projeto'í -> Projeto'?)
-    content = content.replace(/([a-zA-ZÀ-ÿ0-9'"”\)]+)í([\s\r\n])/g, '$1?$2');
+    // --- LIMPEZA DE ELITE ---
 
-    // 2. Aplicar o dicionário de correções
-    fixes.forEach(([oldText, newText]) => {
-        content = content.split(oldText).join(newText);
-    });
+    // 1. LIMPA O RODAPÉ (Padrão: Remove qualquer lixo antes do © e garante espaço antes de "Todos")
+    // Procura por: [caractere estranho]© ou ©© ou apenas © e limpa
+    content = content.replace(/[^a-zA-Z0-9\s]©/g, '©'); 
+    content = content.replace(/©+/g, '©');
+    content = content.replace(/MBA Lite\s*©\s*/g, 'MBA Lite © ');
+
+    // 2. CORREÇÃO DE ACENTUAÇÃO RESTANTE (Regex para pegar os 'í' fantasmas)
+    content = content.replace(/diferenía/g, 'diferença');
+    content = content.replace(/alteraíío/g, 'alteração');
+    content = content.replace(/preJuízo/g, 'prejuízo');
+    content = content.replace(/s\? age/g, 'só age');
+    content = content.replace(/J\? ocorreu/g, 'já ocorreu');
+
+    // 3. SE PREVENIR CONTRA O 'São' MAIÚSCULO NO MEIO DA FRASE
+    content = content.replace(/([a-z]) São /g, '$1 são ');
 
     if (content !== original) {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✅ Corrigido: ${filePath}`);
+        console.log(`✅ Limpeza profunda realizada: ${filePath}`);
         return true;
     }
     return false;
 }
 
-console.log("🚀 Iniciando Super Fix Node...");
+console.log("🚀 Iniciando Limpeza Biônica (Regex) com Node...");
 let changedAny = false;
 
 walkDir(__dirname, (p) => {
@@ -92,14 +58,14 @@ walkDir(__dirname, (p) => {
 
 if (changedAny) {
     try {
-        console.log("\n📦 Sincronizando com Git...");
+        console.log("\n📦 Sincronizando com GitHub...");
         execSync('git add .', { stdio: 'inherit' });
-        execSync('git commit -m "fix: corrige preJuizo e so age via Node"', { stdio: 'inherit' });
+        execSync('git commit -m "fix: limpeza profunda de caracteres invisiveis no rodape"', { stdio: 'inherit' });
         execSync('git push origin main', { stdio: 'inherit' });
-        console.log("\n🎉 Sucesso! Verifique o deploy em instantes.");
+        console.log("\n🎉 Agora sim! Rodapé e textos devidamente higienizados.");
     } catch (e) {
-        console.log("\n⚠️ Git: Nada novo para subir.");
+        console.log("\n⚠️ Git: Sem alterações para subir.");
     }
 } else {
-    console.log("\n✨ Tudo limpo! Nenhum erro encontrado.");
+    console.log("\n✨ O script não detectou nenhum dos padrões de erro conhecidos.");
 }

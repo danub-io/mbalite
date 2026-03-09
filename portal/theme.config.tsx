@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: 'https://github.com/danub-io/mbalite/tree/main/portal',
   footer: {
-    text: 'MBA Lite �© Todos os direitos reservados',
+    text: 'MBA Lite © Todos os direitos reservados',
   },
 }
 
