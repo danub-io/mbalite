@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function LessonTracker({ id, nextStep, nextLink }) {
   const [completed, setCompleted] = useState(false)

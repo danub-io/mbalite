@@ -1,4 +1,4 @@
-﻿import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { supabase } from '../lib/supabaseClient'

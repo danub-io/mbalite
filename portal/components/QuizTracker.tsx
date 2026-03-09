@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function QuizTracker({ id, nextStep, nextLink, videoUrl, questions }) {
   const [completed, setCompleted] = useState(false)

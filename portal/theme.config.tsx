@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import LogoutButton from './components/LogoutButton'
 
