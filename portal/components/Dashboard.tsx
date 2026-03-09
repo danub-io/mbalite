@@ -16,8 +16,8 @@ export default function Dashboard() {
   // Configuração das metas (45 li🏆es no total)
   const totalQualidade = 15;
   const totalPessoas = 15;
-  const totalProJetos = 15;
-  const totalGeral = totalQualidade + totalPessoas + totalProJetos;
+  const totalProjetos = 15;
+  const totalGeral = totalQualidade + totalPessoas + totalProjetos;
 
   // Fun🏆o que varre a mem?ria e conta quantas li🏆es o aluno concluiu em cada trilha
   const calcTrilha = (prefix, total) => {
@@ -31,13 +31,13 @@ export default function Dashboard() {
 
   const compQualidade = calcTrilha('qualidade', totalQualidade);
   const compPessoas = calcTrilha('pessoas', totalPessoas);
-  const compProJetos = calcTrilha('proJetos', totalProJetos);
-  const compGeral = compQualidade + compPessoas + compProJetos;
+  const compProjetos = calcTrilha('projetos', totalProjetos);
+  const compGeral = compQualidade + compPessoas + compProjetos;
 
   // C?lculo das porcentagens de conclusão
   const percQualidade = Math.round((compQualidade / totalQualidade) * 100);
   const percPessoas = Math.round((compPessoas / totalPessoas) * 100);
-  const percProJetos = Math.round((compProJetos / totalProJetos) * 100);
+  const percProjetos = Math.round((compProjetos / totalProjetos) * 100);
   const percGeral = Math.round((compGeral / totalGeral) * 100);
 
   // Subcomponente visual da barra
@@ -104,17 +104,17 @@ export default function Dashboard() {
           <ProgressBar percent={percPessoas} colorClass="bg-purple-600 dark:bg-purple-500" />
         </div>
 
-        {/* Trilha ProJetos */}
+        {/* Trilha Projetos */}
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
           <div className="flex items-center gap-4 mb-6">
             <div className="text-4xl bg-orange-100 dark:bg-orange-900/30 p-3 rounded-2xl">🏆</div>
-            <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">ProJetos</h3>
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Projetos</h3>
           </div>
           <div className="flex Justify-between items-end mb-2">
-            <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compProJetos} / {totalProJetos} Aulas</p>
-            <span className="text-3xl font-black text-orange-600 dark:text-orange-400">{percProJetos}%</span>
+            <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compProjetos} / {totalProjetos} Aulas</p>
+            <span className="text-3xl font-black text-orange-600 dark:text-orange-400">{percProjetos}%</span>
           </div>
-          <ProgressBar percent={percProJetos} colorClass="bg-orange-600 dark:bg-orange-500" />
+          <ProgressBar percent={percProjetos} colorClass="bg-orange-600 dark:bg-orange-500" />
         </div>
 
       </div>
