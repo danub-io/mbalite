@@ -1,12 +1,12 @@
 {
   "index": {
-    "title": "💎 Landing Page",
+    "title": "ðŸ’Ž Landing Page",
     "type": "page",
     "display": "hidden"
   },
-  "central": "🎓 Central do Aluno",
-  "painel": "📊 Meu Painel",
-  "qualidade": "🏆 Trilha Qualidade",
-  "pessoas": "🧠 Trilha Pessoas",
-  "projetos": "🚀 Trilha Projetos"
+  "central": "ðŸŽ“ Central do Aluno",
+  "painel": "ðŸ“Š Meu Painel",
+  "qualidade": "ðŸ† Trilha Qualidade",
+  "pessoas": "ðŸ§  Trilha Pessoas",
+  "projetos": "ðŸš€ Trilha Projetos"
 }
