@@ -10,40 +10,38 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Busca a sessão atual no Supabase
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
       setLoading(false)
       
-      // Se não tiver logado e não estiver na página de login, expulsa pro login
       if (!session && router.pathname !== '/login') {
         router.push('/login')
+      } else if (session && router.pathname === '/login') {
+        router.push('/')
       }
     })
 
-    // Fica escutando mudanças (ex: o usuário clicou em "Sair" ou a sessão expirou)
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
       if (!session && router.pathname !== '/login') {
         router.push('/login')
+      } else if (session && router.pathname === '/login') {
+        router.push('/')
       }
     })
 
     return () => subscription.unsubscribe()
-  }, [router])
+  }, [router.pathname])
 
-  // Mostra uma tela preta enquanto checa o banco de dados (evita piscar a tela do conte?do)
   if (loading) {
     return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-indigo-500 font-black tracking-widest uppercase">Validando Credenciais...</div>
   }
 
-  // Se não tem sessão e não ? a página de login, não renderiza nada (j? est? sendo redirecionado)
   if (!session && router.pathname !== '/login') {
     return null
   }
 
-  // Se chegou aqui, ou t? na tela de login, ou est? logado com sucesso!
   return <Component {...pageProps} />
 }
