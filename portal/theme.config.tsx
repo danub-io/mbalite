@@ -1,17 +1,18 @@
-import React from 'react'
+﻿import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import LogoutButton from './components/LogoutButton'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '-0.05em' }}>🎓 MBA<span style={{color: '#6366f1'}}>Lite.</span></span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/danub-io/mbalite',
   },
-  chat: {
-    link: 'https://discord.com',
+  navbar: {
+    extra: <LogoutButton />
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/danub-io/mbalite/tree/main/portal',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'MBA Lite © Todos os direitos reservados',
   },
 }
 
