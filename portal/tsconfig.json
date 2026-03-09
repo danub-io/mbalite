@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "Jásx": "preserve"
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
