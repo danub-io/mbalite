@@ -2,61 +2,74 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const portalPages = path.join(__dirname, 'portal', 'pages');
+const ignoreDirs = ['node_modules', '.git', '.next', 'out'];
+const allowedExtensions = ['.mdx', '.tsx', '.ts', '.html', '.json'];
 
-// 1. LISTA DE ITENS PARA SUMIR DO MENU
-const itemsToRemove = ['about', 'advanced', 'another', 'satori'];
+// NOVAS REGRAS DE LIMPEZA
+const fixes = [
+    // Erros de codificação direta
+    ["misses", "missões"],
+    ["concludas", "concluídas"],
+    ["Misses", "Missões"],
+    ["Concludas", "Concluídas"],
+    ["diferenía", "diferença"],
+    
+    // Regras de layout e interrogações
+    ["'Projeto'í", "'Projeto'?"],
+    ["'Processo'í", "'Processo'?"],
+    ["preJuízo", "prejuízo"],
+    ["s? age", "só age"],
+    ["J? ocorreu", "já ocorreu"]
+];
 
-function cleanupMenus(dir) {
+function walkDir(dir, callback) {
     if (!fs.existsSync(dir)) return;
-
-    const files = fs.readdirSync(dir);
-
-    files.forEach(file => {
-        const filePath = path.join(dir, file);
-        
-        if (fs.statSync(filePath).isDirectory()) {
-            // Se for uma das pastas que queremos remover, deletamos a pasta inteira
-            if (itemsToRemove.includes(file.toLowerCase())) {
-                console.log(`🗑️ Deletando pasta de exemplo: ${filePath}`);
-                fs.rmSync(filePath, { recursive: true, force: true });
-            } else {
-                cleanupMenus(filePath);
-            }
-        } else if (file === '_meta.json') {
-            // Se for o arquivo de configuração do menu, removemos as linhas
-            let meta = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            let originalKeys = Object.keys(meta);
-            
-            itemsToRemove.forEach(item => {
-                delete meta[item];
-                // Caso o item esteja com letra maiúscula no JSON
-                delete meta[item.charAt(0).toUpperCase() + item.slice(1)];
-            });
-
-            if (Object.keys(meta).length !== originalKeys.length) {
-                fs.writeFileSync(filePath, JSON.stringify(meta, null, 2), 'utf8');
-                console.log(`✂️ Menu limpo em: ${filePath}`);
-            }
-        } else if (itemsToRemove.some(item => file.toLowerCase().startsWith(item))) {
-            // Se for um arquivo solto (ex: about.mdx), deletamos
-            console.log(`🗑️ Deletando arquivo de exemplo: ${filePath}`);
-            fs.unlinkSync(filePath);
+    fs.readdirSync(dir).forEach(f => {
+        const dirPath = path.join(dir, f);
+        if (fs.statSync(dirPath).isDirectory()) {
+            if (!ignoreDirs.includes(f)) walkDir(dirPath, callback);
+        } else if (allowedExtensions.includes(path.extname(dirPath))) {
+            callback(dirPath);
         }
     });
 }
 
-console.log("🚀 Iniciando faxina no menu lateral...");
+function processFile(filePath) {
+    if (filePath.includes('package.json') || filePath.includes('package-lock.json')) return;
 
-try {
-    cleanupMenus(portalPages);
-    
-    console.log("\n📦 Sincronizando limpeza com GitHub...");
-    execSync('git add .', { stdio: 'inherit' });
-    execSync('git commit -m "fix: remove itens de exemplo (About, Advanced, Satori) do menu"', { stdio: 'inherit' });
-    execSync('git push origin main', { stdio: 'inherit' });
-    
-    console.log("\n🎉 Faxina concluída! O menu lateral agora deve mostrar apenas o seu conteúdo real.");
-} catch (error) {
-    console.log("\n❌ Erro durante a limpeza:", error.message);
+    let content = fs.readFileSync(filePath, 'utf8');
+    let original = content;
+
+    // 1. Regex para interrogações (Ex: Projeto'í ou Projeto í)
+    content = content.replace(/í([\s\r\n])/g, '?$1');
+
+    // 2. Aplicar dicionário
+    fixes.forEach(([oldText, newText]) => {
+        content = content.split(oldText).join(newText);
+    });
+
+    if (content !== original) {
+        fs.writeFileSync(filePath, content, 'utf8');
+        console.log(`✅ Higienizado: ${filePath}`);
+        return true;
+    }
+    return false;
+}
+
+console.log("🚀 Iniciando faxina nas missões e interrogações...");
+let changedAny = false;
+
+walkDir(__dirname, (p) => {
+    if (processFile(p)) changedAny = true;
+});
+
+if (changedAny) {
+    try {
+        execSync('git add .');
+        execSync('git commit -m "fix: limpa missoes e interrogacoes corrompidas"');
+        execSync('git push origin main');
+        console.log("\n🎉 Tudo limpo e enviado para o GitHub!");
+    } catch (e) { console.log("\n⚠️ Git: Sem alterações."); }
+} else {
+    console.log("\n✨ Nada encontrado para limpar.");
 }
