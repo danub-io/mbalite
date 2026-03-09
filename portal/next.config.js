@@ -5,8 +5,7 @@
 module.exports = {
   ...withNextra(),
   output: 'export',
-  basePath: '/mbalite/portal',
-  assetPrefix: '/mbalite/portal',
+  basePath: '/portal',
   images: { unoptimized: true },
   trailingSlash: true
 }
