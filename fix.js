@@ -1,118 +1,105 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
-// Pastas que NÃO vamos tocar de jeito nenhum (segurança máxima para não quebrar dependências)
 const ignoreDirs = ['node_modules', '.git', '.next', 'out'];
-// Tipos de arquivos que vamos corrigir
 const allowedExtensions = ['.mdx', '.tsx', '.ts', '.html', '.json'];
 
-// Nosso dicionário de correções exatas (O Node respeita maiúsculas e minúsculas!)
-const quizFixes = [
+// DICIONÁRIO DE CORREÇÕES CIRÚRGICAS
+const fixes = [
+    // Correções de Layout e Casing (o terror do preJuízo)
+    ["preJuízo", "prejuízo"],
+    ["PreJuízo", "Prejuízo"],
+    ["J? ocorreu", "já ocorreu"],
+    ["Já ocorreu", "Já ocorreu"],
+    ["s? age", "só age"],
+    ["S? age", "Só age"],
+    ["preJuizo", "prejuízo"],
+    
+    // Glossário Técnico e Quiz
     ["diferenía", "diferença"],
     ["temporírios", "temporários"],
-    ["temporírio", "temporário"],
-    ["tím", "têm"],
-    ["tím ", "têm "],
     ["alteraíío", "alteração"],
     ["não h?", "não há"],
-    [" h? ", " há "],
     ["sinínimos", "sinônimos"],
     [" São ", " são "],
     ["projetos São", "projetos são"],
     ["Processos São", "Processos são"],
     ["Projetos São", "Projetos são"],
-    ["termos São", "termos são"],
     ["aíío", "ação"],
     ["açíes", "ações"],
     ["situaíío", "situação"],
-    ["avaliaíío", "avaliação"],
-    ["definiíío", "definição"],
-    ["execuíío", "execução"],
-    ["criaíío", "criação"],
-    ["soluíío", "solução"],
-    ["direíío", "direção"],
-    ["condiíío", "condição"],
-    ["condiííes", "condições"],
     ["decisíes", "decisões"],
-    ["questíes", "questões"],
     ["missíes", "missões"],
-    ["reuniíes", "reuniões"],
     ["opíío", "opção"],
-    ["opííes", "opções"],
     ["gestío", "gestão"],
     ["padrío", "padrão"],
     ["prítica", "prática"],
     ["tícnica", "técnica"],
-    ["consequíncia", "consequência"],
-    ["frequíncia", "frequência"],
-    ["referíncia", "referência"],
-    ["competíncia", "competência"],
-    ["excelíncia", "excelência"],
-    ["alím", "além"],
-    ["porím", "porém"],
-    ["atí", "até"],
     ["vocí", "você"],
-    ["príprio", "próprio"],
-    ["príximo", "próximo"],
-    ["míximo", "máximo"],
-    ["necessírio", "necessário"],
-    ["obrigatírio", "obrigatório"],
-    ["diírio", "diário"],
-    ["funcionírio", "funcionário"],
-    ["funcionírios", "funcionários"],
-    ["estagiírio", "estagiário"],
-    ["estagiírios", "estagiários"],
-    ["negício", "negócio"],
-    ["início", "início"],
-    ["propísito", "propósito"],
-    ["princípio", "princípio"],
-    ["Princípio", "Princípio"] // No JS não dá erro ter repetição ou ignorar o case!
+    ["atí", "até"],
+    ["alím", "além"],
+    ["trís", "três"],
+    ["ínico", "único"],
+    ["estratígia", "estratégia"],
+    ["competíncia", "competência"],
+    ["lideranía", "liderança"],
+    ["liííes", "lições"],
+    ["evoluíío", "evolução"],
+    ["MBA Lite ©", "MBA Lite ©"]
 ];
 
-// Função que entra nas pastas procurando os arquivos
 function walkDir(dir, callback) {
     if (!fs.existsSync(dir)) return;
-    
     fs.readdirSync(dir).forEach(f => {
         const dirPath = path.join(dir, f);
-        const isDirectory = fs.statSync(dirPath).isDirectory();
-        
-        if (isDirectory) {
-            if (!ignoreDirs.includes(f)) {
-                walkDir(dirPath, callback);
-            }
-        } else {
-            if (allowedExtensions.includes(path.extname(dirPath))) {
-                callback(dirPath);
-            }
+        if (fs.statSync(dirPath).isDirectory()) {
+            if (!ignoreDirs.includes(f)) walkDir(dirPath, callback);
+        } else if (allowedExtensions.includes(path.extname(dirPath))) {
+            callback(dirPath);
         }
     });
 }
 
-// Função que abre, conserta e salva o arquivo
 function processFile(filePath) {
-    // Trava de segurança extra: NUNCA mexer nos arquivos do NPM
-    if (filePath.endsWith('package.json') || filePath.endsWith('package-lock.json')) return;
+    if (filePath.includes('package.json') || filePath.includes('package-lock.json')) return;
 
     let content = fs.readFileSync(filePath, 'utf8');
-    let originalContent = content;
+    let original = content;
 
-    // 1. Regex Aprimorada para as interrogações corrompidas após aspas e parênteses (ex: 'Projeto'í)
+    // 1. Regex para interrogações coladas (Projeto'í -> Projeto'?)
     content = content.replace(/([a-zA-ZÀ-ÿ0-9'"”\)]+)í([\s\r\n])/g, '$1?$2');
 
-    // 2. Substituição exata do nosso dicionário
-    quizFixes.forEach(([oldText, newText]) => {
-        // No Node, usar split.join é o jeito mais blindado de dar "Replace All" sem dar erro de regex
+    // 2. Aplicar o dicionário de correções
+    fixes.forEach(([oldText, newText]) => {
         content = content.split(oldText).join(newText);
     });
 
-    // Se algo mudou, salva o arquivo forçando UTF-8
-    if (content !== originalContent) {
+    if (content !== original) {
         fs.writeFileSync(filePath, content, 'utf8');
         console.log(`✅ Corrigido: ${filePath}`);
+        return true;
     }
+    return false;
 }
 
-console.log("🚀 Iniciando varredura limpa com Node.js...");
-walkDir(__dirname, processFile);
-console.log("🎉 Varredura concluída com sucesso!");
+console.log("🚀 Iniciando Super Fix Node...");
+let changedAny = false;
+
+walkDir(__dirname, (p) => {
+    if (processFile(p)) changedAny = true;
+});
+
+if (changedAny) {
+    try {
+        console.log("\n📦 Sincronizando com Git...");
+        execSync('git add .', { stdio: 'inherit' });
+        execSync('git commit -m "fix: corrige preJuizo e so age via Node"', { stdio: 'inherit' });
+        execSync('git push origin main', { stdio: 'inherit' });
+        console.log("\n🎉 Sucesso! Verifique o deploy em instantes.");
+    } catch (e) {
+        console.log("\n⚠️ Git: Nada novo para subir.");
+    }
+} else {
+    console.log("\n✨ Tudo limpo! Nenhum erro encontrado.");
+}
