@@ -130,7 +130,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
                   onClick={handleNextQuestion}
                   className="bg-indigo-600 text-white font-black py-3 px-8 rounded-xl hover:bg-indigo-700 transition-all uppercase tracking-wide shadow-md"
                 >
-                  {currentQuestionIndex < questions.length - 1 ? "Pr?xima Pergunta ?" : "Ver Resultado ?"}
+                  {currentQuestionIndex < questions.length - 1 ? "Próxima Pergunta ➔" : "Ver Resultado ➔"}
                 </button>
               </div>
             )}
