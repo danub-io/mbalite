@@ -15,7 +15,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
     if (progress[id]) setCompleted(true)
   }, [id])
 
-  // Fun??o disparada ao clicar em uma op??o
+  // Fun🏆o disparada ao clicar em uma opção
   const handleAnswer = (selectedIndex) => {
     if (isAnswered) return; // Impede duplo clique
 
@@ -27,7 +27,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
     }
   }
 
-  // Fun??o disparada ao clicar no bot?o "Pr?xima Pergunta"
+  // Fun🏆o disparada ao clicar no bot?o "Pr?xima Pergunta"
   const handleNextQuestion = () => {
     setIsAnswered(false)
     setSelectedAnswer(null)
@@ -64,7 +64,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
         <div className="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 px-6 py-3 rounded-xl border border-green-500">
           <span className="text-lg">?</span>
           <span className="text-lg font-black text-green-700 dark:text-green-400 uppercase tracking-tight">
-            Miss?o Cumprida
+            Missão Cumprida
           </span>
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
             {passed ? (
               <>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 font-medium">
-                  Excelente! Voc? atingiu a nota de corte e provou seu dom?nio no assunto.
+                  Excelente! Voc? atingiu a nota de corte e provou seu domínio no assunto.
                 </p>
                 <div className="flex flex-col items-center">
                   <button onClick={markAsComplete} className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-black text-lg py-4 px-10 rounded-xl shadow-md hover:scale-105 transition-all uppercase tracking-tight">

@@ -33,7 +33,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-950 text-white font-sans p-4">
       <div className="bg-slate-900 p-8 md:p-12 rounded-[2rem] border border-slate-800 shadow-2xl w-full max-w-md relative overflow-hidden">
-        <div className="absolute -right-10 -top-10 text-9xl opacity-5">??</div>
+        <div className="absolute -right-10 -top-10 text-9xl opacity-5">🏆</div>
         
         <div className="text-3xl font-black tracking-tighter text-center mb-8 relative z-10">
           MBA<span className="text-indigo-500">Lite.</span>
