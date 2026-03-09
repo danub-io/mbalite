@@ -1,17 +1,17 @@
 {
-  "introducao": "1. IntroduÃ§Ã£o a Projetos",
-  "ageis": "2. Metodologias Ãgeis",
+  "introducao": "1. Introdução a Projetos",
+  "ageis": "2. Metodologias Ágeis",
   "scrum": "3. Framework Scrum",
   "kanban": "4. Sistema Kanban",
-  "cronograma": "5. GestÃ£o de Cronograma",
-  "custos": "6. GestÃ£o de Custos",
-  "riscos": "7. GestÃ£o de Riscos",
+  "cronograma": "5. Gestão de Cronograma",
+  "custos": "6. Gestão de Custos",
+  "riscos": "7. Gestão de Riscos",
   "stakeholders": "8. Partes Interessadas",
-  "comunicacao": "9. Plano de ComunicaÃ§Ã£o",
+  "comunicacao": "9. Plano de Comunicação",
   "qualidade": "10. Qualidade em Projetos",
-  "escopo": "11. DefiniÃ§Ã£o de Escopo",
-  "equipe": "12. GestÃ£o da Equipe",
+  "escopo": "11. Definição de Escopo",
+  "equipe": "12. Gestão da Equipe",
   "encerramento": "13. Encerramento de Projeto",
   "pmbok": "14. Guia PMBOK",
-  "sucesso": "15. CritÃ©rios de Sucesso"
+  "sucesso": "15. Critérios de Sucesso"
 }

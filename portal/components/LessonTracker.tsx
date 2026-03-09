@@ -20,9 +20,9 @@ export default function LessonTracker({ id, nextStep, nextLink }) {
     <div className="my-10 flex flex-col items-center border-t border-slate-200 dark:border-slate-800 pt-8 font-sans">
       {completed ? (
         <div className="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 px-6 py-3 rounded-xl border border-green-500">
-          <span className="text-lg">✅</span>
+          <span className="text-lg">?</span>
           <span className="text-lg font-black text-green-700 dark:text-green-400 uppercase tracking-tight">
-            Missão Cumprida
+            Miss�o Cumprida
           </span>
         </div>
       ) : (
@@ -34,7 +34,7 @@ export default function LessonTracker({ id, nextStep, nextLink }) {
             Concluir Atividade
           </button>
           <div className="mt-4 text-lg font-black text-slate-500 dark:text-slate-400 uppercase tracking-tight">
-            Próximo: {nextStep}
+            Pr�ximo: {nextStep}
           </div>
         </div>
       )}

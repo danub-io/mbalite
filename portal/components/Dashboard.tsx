@@ -4,7 +4,7 @@ export default function Dashboard() {
   const [progress, setProgress] = useState({})
   const [mounted, setMounted] = useState(false)
 
-  // O useEffect garante que a leitura dos dados ocorra apenas no navegador do cliente (evita erros de hidratação)
+  // O useEffect garante que a leitura dos dados ocorra apenas no navegador do cliente (evita erros de hidrata��o)
   useEffect(() => {
     const storedProgress = JSON.parse(localStorage.getItem('mbalite_progress') || '{}')
     setProgress(storedProgress)
@@ -13,13 +13,13 @@ export default function Dashboard() {
 
   if (!mounted) return null 
 
-  // Configuração das metas (45 lições no total)
+  // Configura��o das metas (45 li��es no total)
   const totalQualidade = 15;
   const totalPessoas = 15;
   const totalProjetos = 15;
   const totalGeral = totalQualidade + totalPessoas + totalProjetos;
 
-  // Função que varre a memória e conta quantas lições o aluno concluiu em cada trilha
+  // Fun��o que varre a mem�ria e conta quantas li��es o aluno concluiu em cada trilha
   const calcTrilha = (prefix, total) => {
     let count = 0;
     for (let i = 1; i <= total; i++) {
@@ -34,7 +34,7 @@ export default function Dashboard() {
   const compProjetos = calcTrilha('projetos', totalProjetos);
   const compGeral = compQualidade + compPessoas + compProjetos;
 
-  // Cálculo das porcentagens de conclusão
+  // C�lculo das porcentagens de conclus�o
   const percQualidade = Math.round((compQualidade / totalQualidade) * 100);
   const percPessoas = Math.round((compPessoas / totalPessoas) * 100);
   const percProjetos = Math.round((compProjetos / totalProjetos) * 100);
@@ -56,12 +56,12 @@ export default function Dashboard() {
       {/* 1. CARD PRINCIPAL: PROGRESSO GLOBAL */}
       <div className="bg-slate-900 text-white p-8 md:p-12 rounded-[2rem] shadow-2xl mb-12 flex flex-col md:flex-row items-center justify-between border-4 border-slate-800 relative overflow-hidden">
         {/* Detalhe visual de fundo */}
-        <div className="absolute -right-10 -top-10 text-9xl opacity-5">🎓</div>
+        <div className="absolute -right-10 -top-10 text-9xl opacity-5">??</div>
         
         <div className="mb-8 md:mb-0 text-center md:text-left z-10">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-2">Seu MBA Lite</h2>
           <p className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-widest">
-            Visão Geral Estratégica
+            Vis�o Geral Estrat�gica
           </p>
         </div>
         
@@ -70,18 +70,18 @@ export default function Dashboard() {
             {percGeral}%
           </div>
           <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mt-4">
-            {compGeral} de {totalGeral} Missões Concluídas
+            {compGeral} de {totalGeral} Miss�es Conclu�das
           </div>
         </div>
       </div>
 
-      {/* 2. CARDS DAS TRILHAS ESPECÍFICAS */}
+      {/* 2. CARDS DAS TRILHAS ESPEC�FICAS */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Trilha Qualidade */}
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
           <div className="flex items-center gap-4 mb-6">
-            <div className="text-4xl bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-2xl">🏆</div>
+            <div className="text-4xl bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-2xl">??</div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Qualidade</h3>
           </div>
           <div className="flex justify-between items-end mb-2">
@@ -94,7 +94,7 @@ export default function Dashboard() {
         {/* Trilha Pessoas */}
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
           <div className="flex items-center gap-4 mb-6">
-            <div className="text-4xl bg-purple-100 dark:bg-purple-900/30 p-3 rounded-2xl">🧠</div>
+            <div className="text-4xl bg-purple-100 dark:bg-purple-900/30 p-3 rounded-2xl">??</div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Pessoas</h3>
           </div>
           <div className="flex justify-between items-end mb-2">
@@ -107,7 +107,7 @@ export default function Dashboard() {
         {/* Trilha Projetos */}
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
           <div className="flex items-center gap-4 mb-6">
-            <div className="text-4xl bg-orange-100 dark:bg-orange-900/30 p-3 rounded-2xl">🚀</div>
+            <div className="text-4xl bg-orange-100 dark:bg-orange-900/30 p-3 rounded-2xl">??</div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Projetos</h3>
           </div>
           <div className="flex justify-between items-end mb-2">
