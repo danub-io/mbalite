@@ -1,0 +1,21 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}
+
+/* Correção de contraste: Links claros no modo escuro */
+.dark a, 
+.dark .nx-text-primary-600,
+.dark .nextra-sidebar-container a {
+  color: #a5b4fc !important; /* Indigo 300: Visibilidade perfeita no escuro */
+}
+
+.dark .nextra-sidebar-container a:hover {
+  color: #ffffff !important;
+}

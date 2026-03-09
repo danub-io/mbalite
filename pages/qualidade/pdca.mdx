@@ -1,0 +1,61 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="qualidade-01" fallbackLink="/qualidade/mentalidade" />
+
+# O Motor PDCA
+
+A ferramenta fundamental da melhoria contínua. Assista à aula e preste atenção aos detalhes de cada fase.
+
+<QuizTracker 
+  id="qualidade-02" 
+  nextStep="Diagrama de Ishikawa" 
+  nextLink="/qualidade/ishikawa" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "O que significa a sigla PDCA?",
+      options: [
+        "Produce, Deliver, Check, Act.",
+        "Plan, Do, Check, Act.",
+        "Prepare, Design, Create, Analyze.",
+        "Plan, Delegate, Control, Achieve.",
+        "Process, Document, Correct, Approve."
+      ],
+      correct: 1
+    },
+    {
+      question: "Na fase 'Do' (Executar) do ciclo PDCA, qual ação é fundamental além de simplesmente realizar a tarefa?",
+      options: [
+        "Padronizar o processo imediatamente.",
+        "Demitir quem cometer erros durante a execução.",
+        "Coletar dados rigorosamente para a fase de verificação.",
+        "Mudar o plano original sem avisar o cliente.",
+        "Apenas focar na velocidade da entrega."
+      ],
+      correct: 2
+    },
+    {
+      question: "O que acontece com a empresa que entra no 'Ciclo da Ilusão' (Pula a fase Check)?",
+      options: [
+        "Ela economiza tempo e aumenta os lucros no longo prazo.",
+        "Ela se torna uma empresa certificada ISO 9001 mais rápido.",
+        "Ela executa planos, mas nunca aprende, repetindo os mesmos erros indefinidamente.",
+        "Ela delega a verificação para os clientes finais.",
+        "Ela elimina a necessidade de gestores de qualidade."
+      ],
+      correct: 2
+    },
+    {
+      question: "O que deve ser feito na fase 'Act' (Agir) se a verificação mostrar que o plano funcionou com sucesso?",
+      options: [
+        "Ignorar os resultados e criar um plano totalmente novo.",
+        "Padronizar a melhoria para que toda a empresa utilize o novo método.",
+        "Guardar o método em segredo para manter a vantagem sobre os colegas.",
+        "Diminuir o ritmo de trabalho da equipe.",
+        "Pular imediatamente para a fase Check do próximo projeto."
+      ],
+      correct: 1
+    }
+  ]}
+/>

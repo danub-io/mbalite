@@ -1,0 +1,72 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="pessoas-04" fallbackLink="/pessoas/conflitos" />
+
+# Recrutamento e Seleção
+
+O erro mais caro de um líder é contratar a pessoa errada.
+
+<QuizTracker 
+  id="pessoas-05" 
+  nextStep="Onboarding de Impacto" 
+  nextLink="/pessoas/onboarding" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "A máxima do recrutamento de elite diz: 'Contrate por X, treine por Y'. Quais são as palavras?",
+      options: [
+        "Contrate por salário, treine por medo.",
+        "Contrate por currículo, treine por certificações.",
+        "Contrate por indicação, treine por processos.",
+        "Contrate por caráter (Atitude/Fit Cultural), treine a técnica (Habilidade).",
+        "Contrate por carisma, treine as emoções."
+      ],
+      correct: 3
+    },
+    {
+      question: "O que é o 'Fit Cultural' na seleção de um candidato?",
+      options: [
+        "O nível de inglês do candidato.",
+        "A adequação dos valores e comportamentos naturais do candidato com os valores da empresa.",
+        "A capacidade física do candidato de aguentar o estresse.",
+        "O número de faculdades que ele cursou.",
+        "A exigência de que o candidato torça para o mesmo time do gestor."
+      ],
+      correct: 1
+    },
+    {
+      question: "A entrevista 'Comportamental' baseia-se em qual premissa psicológica?",
+      options: [
+        "Comportamento passado em situações reais é o melhor previsor de comportamento futuro.",
+        "O candidato que sorri mais é o mais competente.",
+        "Respostas decoradas mostram inteligência superior.",
+        "Testes de QI são a única forma de medir capacidade gerencial.",
+        "Quem fala melhor e mais alto, lidera melhor."
+      ],
+      correct: 0
+    },
+    {
+      question: "Qual dessas é uma pergunta de Entrevista Comportamental (Foco em situações passadas)?",
+      options: [
+        "Quais são os seus três maiores defeitos?",
+        "Onde você se vê daqui a 5 anos?",
+        "Se o prédio estivesse pegando fogo, o que você faria?",
+        "Me conte sobre uma vez em que você discordou do seu chefe. Como você lidou com a situação?",
+        "Qual animal você seria e por quê?"
+      ],
+      correct: 3
+    },
+    {
+      question: "Por que a diversidade é uma vantagem estratégica no recrutamento, e não apenas uma obrigação moral?",
+      options: [
+        "Porque diminui os impostos trabalhistas.",
+        "Porque times homogêneos (pessoas que pensam igual) sofrem de 'ponto cego', enquanto times diversos trazem soluções que a concorrência não viu.",
+        "Porque o RH exige cotas para aprovar as vagas.",
+        "Porque facilita a padronização dos salários.",
+        "Não é uma vantagem, é apenas marketing."
+      ],
+      correct: 1
+    }
+  ]}
+/>

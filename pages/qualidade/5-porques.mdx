@@ -1,0 +1,61 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="qualidade-03" fallbackLink="/qualidade/ishikawa" />
+
+# A Técnica dos 5 Porquês
+
+A escavação profunda para nunca mais consertar a mesma coisa duas vezes.
+
+<QuizTracker 
+  id="qualidade-04" 
+  nextStep="Diagrama de Pareto" 
+  nextLink="/qualidade/pareto" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "Qual é o principal objetivo da técnica dos 5 Porquês?",
+      options: [
+        "Incomodar o operador até que ele confesse o erro.",
+        "Identificar a causa raiz de um problema para evitar sua reincidência.",
+        "Criar 5 alternativas diferentes para resolver um sintoma.",
+        "Aumentar a burocracia do processo de qualidade.",
+        "Questionar as ordens da diretoria sistematicamente."
+      ],
+      correct: 1
+    },
+    {
+      question: "De acordo com a metodologia, é estritamente obrigatório perguntar exatamente 5 vezes?",
+      options: [
+        "Sim, o método falha se forem 4 ou 6 perguntas.",
+        "Não, '5' é uma estimativa; o importante é chegar na falha sistêmica corrigível.",
+        "Sim, e as 5 perguntas devem ser feitas para pessoas diferentes.",
+        "Não, basta perguntar 2 vezes para qualquer problema complexo.",
+        "Sim, está previsto nas normas de auditoria global."
+      ],
+      correct: 1
+    },
+    {
+      question: "O que geralmente acontece quando paramos na primeira resposta de um problema?",
+      options: [
+        "Resolvemos a causa raiz rapidamente.",
+        "Poupamos tempo e dinheiro no longo prazo.",
+        "Tratamos apenas o 'sintoma' (causa direta), e o problema volta a ocorrer.",
+        "A equipe se sente mais motivada por não ter que analisar dados.",
+        "O cliente fica mais satisfeito com a velocidade."
+      ],
+      correct: 2
+    },
+    {
+      question: "A técnica dos 5 Porquês costuma evoluir de falhas mecânicas/operacionais para qual outro tipo de falha?",
+      options: [
+        "Falhas de marketing.",
+        "Falhas climáticas.",
+        "Falhas na taxa de juros do mercado.",
+        "Falhas de processo, treinamento ou sistema (Gestão).",
+        "Falhas de fornecedores internacionais apenas."
+      ],
+      correct: 3
+    }
+  ]}
+/>

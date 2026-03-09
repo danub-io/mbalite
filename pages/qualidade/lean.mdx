@@ -1,0 +1,72 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="qualidade-10" fallbackLink="/qualidade/5s" />
+
+# Transformação Lean
+
+A filosofia da Toyota: fazer mais com menos, cortando tudo aquilo que o cliente não quer pagar.
+
+<QuizTracker 
+  id="qualidade-11" 
+  nextStep="Seis Sigma" 
+  nextLink="/qualidade/seis-sigma" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "Qual é o foco e o objetivo central da mentalidade Lean (Manufatura Enxuta)?",
+      options: [
+        "Cortar salários e benefícios para aumentar o lucro líquido.",
+        "Identificar e eliminar sistematicamente os desperdícios que não agregam valor ao cliente.",
+        "Automatizar toda a empresa com robôs.",
+        "Terceirizar a produção para países com mão de obra barata.",
+        "Trabalhar mais horas para entregar os projetos."
+      ],
+      correct: 1
+    },
+    {
+      question: "O que o sistema Lean considera ser um 'Desperdício' (Muda)?",
+      options: [
+        "Apenas os materiais físicos jogados no lixo da fábrica.",
+        "O tempo usado pelos diretores em reuniões estratégicas.",
+        "Qualquer atividade que consome recursos, mas não cria valor pelo qual o cliente esteja disposto a pagar.",
+        "O dinheiro investido em pesquisa e desenvolvimento de novos produtos.",
+        "Os impostos pagos ao governo."
+      ],
+      correct: 2
+    },
+    {
+      question: "No contexto tradicional de fábricas, um 'Estoque Gigantesco' era visto como segurança. Como o Lean enxerga esse estoque?",
+      options: [
+        "Como a maior vantagem competitiva da empresa moderna.",
+        "Como um desperdício que esconde os verdadeiros problemas de produção e imobiliza o capital.",
+        "Como um ativo essencial para a inovação.",
+        "Como uma estratégia de marketing inteligente.",
+        "Como a única forma de garantir a satisfação dos funcionários."
+      ],
+      correct: 1
+    },
+    {
+      question: "O que significa o conceito de 'Produção Puxada' (Pull System) na gestão Lean?",
+      options: [
+        "A empresa produz o máximo possível e 'empurra' para o mercado comprar.",
+        "Os funcionários são 'puxados' para trabalhar em finais de semana.",
+        "A produção só é acionada quando há uma demanda ou pedido real do cliente.",
+        "O diretor puxa a responsabilidade para si e toma todas as decisões.",
+        "A matéria-prima é puxada por esteiras mecânicas de alta velocidade."
+      ],
+      correct: 2
+    },
+    {
+      question: "A palavra 'Kaizen' é o coração do Lean. O que ela significa?",
+      options: [
+        "Melhoria contínua (hoje melhor do que ontem, amanhã melhor do que hoje).",
+        "Lucro máximo em tempo mínimo.",
+        "Controle de qualidade terceirizado.",
+        "Demissão em massa para corte de gastos.",
+        "Substituição de humanos por máquinas."
+      ],
+      correct: 0
+    }
+  ]}
+/>

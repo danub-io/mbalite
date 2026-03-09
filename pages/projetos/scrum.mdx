@@ -1,0 +1,72 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="projetos-02" fallbackLink="/projetos/ageis" />
+
+# O Framework Scrum
+
+Transformando grandes projetos em Sprints mastigáveis.
+
+<QuizTracker 
+  id="projetos-03" 
+  nextStep="Sistema Kanban" 
+  nextLink="/projetos/kanban" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "No framework Scrum, qual é a responsabilidade principal do 'Product Owner' (PO)?",
+      options: [
+        "Dizer aos programadores como eles devem escrever o código.",
+        "Proteger a equipe de distrações externas e organizar as reuniões.",
+        "Definir a visão do produto, entender as necessidades do cliente e priorizar o que tem mais valor (Product Backlog).",
+        "Pagar os salários e demitir quem chega atrasado.",
+        "Fazer a contabilidade do projeto."
+      ],
+      correct: 2
+    },
+    {
+      question: "Qual é o papel do 'Scrum Master'?",
+      options: [
+        "Ser o chefe autoritário da equipe técnica.",
+        "Atuar como um facilitador, remover impedimentos e garantir que as regras e valores do Scrum sejam seguidos.",
+        "Decidir quais funcionalidades o cliente precisa.",
+        "Aprovar o orçamento anual de TI.",
+        "Vender o software finalizado."
+      ],
+      correct: 1
+    },
+    {
+      question: "O que é uma Sprint no Scrum?",
+      options: [
+        "Uma reunião que dura o dia inteiro.",
+        "Um ciclo de trabalho curto e com tempo fixo (geralmente 1 a 4 semanas) no qual um incremento funcional do produto é criado.",
+        "Um software de gerenciamento de tarefas.",
+        "A fase de encerramento do projeto, após meses de planejamento.",
+        "O momento em que o cliente paga a fatura."
+      ],
+      correct: 1
+    },
+    {
+      question: "Qual o objetivo da 'Daily Scrum' (Reunião Diária)?",
+      options: [
+        "Controlar que horas os funcionários chegaram ao trabalho.",
+        "Sincronizar o trabalho da equipe, identificar rapidamente o que foi feito, o que será feito e mapear impedimentos.",
+        "Fazer uma apresentação em PowerPoint para o cliente.",
+        "Refazer o planejamento estratégico de 5 anos da empresa.",
+        "Aprovar o banco de horas extras do RH."
+      ],
+      correct: 1
+    },
+    {
+      question: "A separação de poder no Scrum é muito clara. Quem é o dono do 'Como' (a decisão de como o trabalho será executado tecnicamente)?",
+      options: [
+        "O Scrum Master.",
+        "O CEO da empresa.",
+        "O Product Owner.",
+        "Apenas os Desenvolvedores (a equipe técnica).",
+        "O cliente."
+      ],
+      correct: 3
+    }
+  ]}
+/>

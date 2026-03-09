@@ -1,0 +1,72 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="projetos-05" fallbackLink="/projetos/cronograma" />
+
+# Gestão de Custos
+
+A Saúde Financeira do projeto. Custo não é apenas pagar contas, é prever o rombo.
+
+<QuizTracker 
+  id="projetos-06" 
+  nextStep="Gestão de Riscos" 
+  nextLink="/projetos/riscos" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "O que é a 'Linha de Base de Custos' (Cost Baseline) em um projeto?",
+      options: [
+        "O custo do projeto se ele for feito no exterior.",
+        "O orçamento final aprovado e distribuído ao longo do tempo, que servirá de régua para medir o desempenho financeiro.",
+        "A estimativa otimista antes de o projeto começar.",
+        "A quantidade de dinheiro que o cliente se recusa a pagar.",
+        "O valor do salário do gerente de projetos."
+      ],
+      correct: 1
+    },
+    {
+      question: "Qual é o grande perigo de avaliar a saúde financeira de um projeto olhando APENAS para o dinheiro gasto (Fluxo de Caixa)?",
+      options: [
+        "A contabilidade pode errar as notas fiscais.",
+        "O dinheiro gasto não indica quanto trabalho físico foi realmente concluído (Valor Agregado); você pode ter gasto 50% da verba para fazer só 10% do projeto.",
+        "O dinheiro sofre inflação diária.",
+        "Os impostos escondem o custo real.",
+        "Os patrocinadores não ligam para o fluxo de caixa."
+      ],
+      correct: 1
+    },
+    {
+      question: "Para que serve a técnica de 'Gerenciamento do Valor Agregado' (EVM)?",
+      options: [
+        "Para cruzar o Custo Real, o Tempo e o Trabalho Efetivamente Concluído, revelando se o projeto está saudável.",
+        "Para calcular rescisões trabalhistas.",
+        "Para aumentar o preço de venda do produto para o cliente.",
+        "Para justificar atrasos inevitáveis.",
+        "Para transformar o gerente em um analista de marketing."
+      ],
+      correct: 0
+    },
+    {
+      question: "O que são as 'Reservas de Contingência' no orçamento?",
+      options: [
+        "Dinheiro guardado para subornar auditores.",
+        "O lucro escondido que a equipe técnica divide no final.",
+        "Uma margem financeira aprovada e separada especificamente para lidar com riscos CONHECIDOS que foram mapeados no planejamento.",
+        "Dinheiro usado apenas se o CEO pedir.",
+        "A verba de marketing do projeto."
+      ],
+      correct: 2
+    },
+    {
+      question: "Se o seu Índice de Desempenho de Custo (CPI) for menor que 1.0, o que isso significa?",
+      options: [
+        "Que o projeto está excelente e economizando dinheiro.",
+        "Que o projeto terminou antes do prazo.",
+        "Que o projeto está sangrando dinheiro (gastando mais do que deveria para o trabalho realizado até o momento).",
+        "Que o projeto nem começou.",
+        "Que os funcionários estão recebendo salários baixos."
+      ],
+      correct: 2
+    }
+  ]}
+/>

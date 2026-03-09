@@ -1,0 +1,72 @@
+import ProgressGuard from '../../components/ProgressGuard'
+import QuizTracker from '../../components/QuizTracker'
+
+<ProgressGuard requiredId="pessoas-03" fallbackLink="/pessoas/feedback" />
+
+# Gestão de Conflitos
+
+Onde há pessoas competentes e apaixonadas, haverá atrito. Aprenda a gerenciar isso.
+
+<QuizTracker 
+  id="pessoas-04" 
+  nextStep="Recrutamento e Seleção" 
+  nextLink="/pessoas/recrutamento" 
+  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  questions={[
+    {
+      question: "Qual é a visão moderna sobre conflitos dentro de equipes de alta performance?",
+      options: [
+        "Eles devem ser evitados a todo custo, pois destroem a empresa.",
+        "Eles são naturais e, se bem mediados, geram inovação e expõem falhas no processo.",
+        "Eles são sempre causados por funcionários incompetentes.",
+        "Eles só acontecem em empresas que não têm processo seletivo.",
+        "Eles devem ser resolvidos com advertências formais pelo RH."
+      ],
+      correct: 1
+    },
+    {
+      question: "Qual é a premissa de negociação do estilo 'Colaborativo' (Ganha-Ganha)?",
+      options: [
+        "Eu abro mão do meu objetivo para que você alcance o seu.",
+        "Eu forço a minha visão porque sou o chefe.",
+        "Nós encontramos uma terceira alternativa criativa que atenda aos interesses fundamentais de ambos.",
+        "Nós dividimos o problema no meio, e ambos saímos um pouco insatisfeitos.",
+        "Nós fingimos que o problema não existe."
+      ],
+      correct: 2
+    },
+    {
+      question: "Ao mediar um conflito, o gestor de elite deve focar em separar:",
+      options: [
+        "Os homens das mulheres.",
+        "Os culpados dos inocentes.",
+        "As pessoas do problema (atacar o processo, não o caráter do colega).",
+        "O RH da diretoria.",
+        "O salário dos benefícios."
+      ],
+      correct: 2
+    },
+    {
+      question: "O estilo de resolução de conflitos 'Evitar' (Fugir) é útil quando?",
+      options: [
+        "O problema é crucial e afeta as finanças da empresa.",
+        "O assunto é trivial ou a equipe está muito exaltada e precisa de um 'tempo' (cool down) antes de discutir logicamente.",
+        "O líder tem medo de confrontar um funcionário problemático.",
+        "É a estratégia principal de todo gestor maduro.",
+        "O cliente está prestando queixa formal."
+      ],
+      correct: 1
+    },
+    {
+      question: "Qual o erro mais comum de um líder ao tentar resolver um conflito entre dois liderados?",
+      options: [
+        "Ouvir os dois lados da história.",
+        "Agir como 'Juiz', tomando partido de um lado sem ensinar a equipe a negociar as próprias diferenças.",
+        "Usar fatos e dados na discussão.",
+        "Fazer a reunião em uma sala fechada.",
+        "Pedir sugestões de solução aos envolvidos."
+      ],
+      correct: 1
+    }
+  ]}
+/>
