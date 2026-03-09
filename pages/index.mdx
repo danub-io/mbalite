@@ -4,42 +4,64 @@ title: MBA Lite - Acelere sua Carreira
 
 <div className="w-full font-sans -mt-8">
 
-  {/* HERO SECTION */}
+  {/* 1. HERO SECTION (A Promessa Principal) */}
   <div className="bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center shadow-2xl mb-20 relative overflow-hidden border-4 border-slate-800">
+    <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full"></div>
+    <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-600/20 blur-3xl rounded-full"></div>
+    
     <div className="relative z-10">
+      <div className="inline-block bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 font-bold px-4 py-2 rounded-full text-sm uppercase tracking-widest mb-8">
+        🚀 O Novo Padrão de Ensino
+      </div>
       <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-tight">
         Aprenda a Liderar. <br/>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-orange-400">
           Sem Burocracia.
         </span>
       </h1>
-      <div className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-medium">
-        Domine Gestão de Qualidade, Pessoas e Projetos em 45 lições diretas.
+      <div className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
+        Domine Gestão de Qualidade, Liderança de Pessoas e Execução de Projetos em 45 lições diretas ao ponto.
       </div>
-      <div className="flex gap-4 justify-center">
-        <a href="/central" className="bg-indigo-600 text-white font-black text-lg py-5 px-10 rounded-2xl shadow-xl hover:scale-105 transition-all uppercase">
-          Começar Agora ➔
+      
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* Note o link para /central agora */}
+        <a href="/mbalite/central" className="bg-indigo-600 text-white font-black text-lg py-5 px-10 rounded-2xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
+          Começar Formação ➔
         </a>
       </div>
     </div>
   </div>
 
-  {/* TRILHAS */}
+  {/* 2. AS 3 TRILHAS */}
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-    <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-5xl mb-4">🏆</div>
-      <h3 className="text-xl font-black uppercase">Qualidade</h3>
-      <a href="/qualidade/mentalidade" className="text-indigo-600 font-bold uppercase text-sm">Ver Módulo</a>
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
+      <div className="text-6xl mb-6">🏆</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Qualidade</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Elimine o caos operacional com Lean e Seis Sigma.</div>
+      <a href="/mbalite/qualidade/mentalidade" className="text-indigo-600 dark:text-indigo-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
-    <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-5xl mb-4">🧠</div>
-      <h3 className="text-xl font-black uppercase">Pessoas</h3>
-      <a href="/pessoas/lideranca" className="text-purple-600 font-bold uppercase text-sm">Ver Módulo</a>
+
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
+      <div className="text-6xl mb-6">🧠</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Pessoas</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Liderança situacional e cultura de alta performance.</div>
+      <a href="/mbalite/pessoas/lideranca" className="text-purple-600 dark:text-purple-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
-    <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-5xl mb-4">🚀</div>
-      <h3 className="text-2xl font-black uppercase">Projetos</h3>
-      <a href="/projetos/introducao" className="text-orange-600 font-bold uppercase text-sm">Ver Módulo</a>
+
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
+      <div className="text-6xl mb-6">🚀</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Projetos</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Domine Scrum, Kanban e a execução implacável.</div>
+      <a href="/mbalite/projetos/introducao" className="text-orange-600 dark:text-orange-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
   </div>
+
+  {/* 3. CTA FINAL */}
+  <div className="text-center pb-20">
+    <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-8">Pronto para o próximo nível?</h2>
+    <a href="/mbalite/central" className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-black text-xl py-6 px-16 rounded-[2rem] shadow-2xl hover:scale-105 transition-all uppercase tracking-widest">
+      Acessar Agora
+    </a>
+  </div>
+
 </div>
