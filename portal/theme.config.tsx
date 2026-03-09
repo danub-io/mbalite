@@ -8,7 +8,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/danub-io/mbalite',
   },
   navbar: {
-    extra: <LogoutButton />
+    extraContent: <LogoutButton />
   },
   docsRepositoryBase: 'https://github.com/danub-io/mbalite/tree/main/portal',
   footer: {
