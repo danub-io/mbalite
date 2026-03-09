@@ -4,7 +4,7 @@ export default function Dashboard() {
   const [progress, setProgress] = useState({})
   const [mounted, setMounted] = useState(false)
 
-  // O useEffect garante que a leitura dos dados ocorra apenas no navegador do cliente (evita erros de hidrata��o)
+  // O useEffect garante que a leitura dos dados ocorra apenas no navegador do cliente (evita erros de hidrata??o)
   useEffect(() => {
     const storedProgress = JSON.parse(localStorage.getItem('mbalite_progress') || '{}')
     setProgress(storedProgress)
@@ -13,13 +13,13 @@ export default function Dashboard() {
 
   if (!mounted) return null 
 
-  // Configura��o das metas (45 li��es no total)
+  // Configura??o das metas (45 li??es no total)
   const totalQualidade = 15;
   const totalPessoas = 15;
   const totalProjetos = 15;
   const totalGeral = totalQualidade + totalPessoas + totalProjetos;
 
-  // Fun��o que varre a mem�ria e conta quantas li��es o aluno concluiu em cada trilha
+  // Fun??o que varre a mem?ria e conta quantas li??es o aluno concluiu em cada trilha
   const calcTrilha = (prefix, total) => {
     let count = 0;
     for (let i = 1; i <= total; i++) {
@@ -34,7 +34,7 @@ export default function Dashboard() {
   const compProjetos = calcTrilha('projetos', totalProjetos);
   const compGeral = compQualidade + compPessoas + compProjetos;
 
-  // C�lculo das porcentagens de conclus�o
+  // C?lculo das porcentagens de conclus?o
   const percQualidade = Math.round((compQualidade / totalQualidade) * 100);
   const percPessoas = Math.round((compPessoas / totalPessoas) * 100);
   const percProjetos = Math.round((compProjetos / totalProjetos) * 100);
@@ -61,7 +61,7 @@ export default function Dashboard() {
         <div className="mb-8 md:mb-0 text-center md:text-left z-10">
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-2">Seu MBA Lite</h2>
           <p className="text-slate-400 font-medium text-lg md:text-xl uppercase tracking-widest">
-            Vis�o Geral Estrat�gica
+            Vis?o Geral Estrat?gica
           </p>
         </div>
         
@@ -70,12 +70,12 @@ export default function Dashboard() {
             {percGeral}%
           </div>
           <div className="text-sm font-bold text-slate-400 uppercase tracking-widest mt-4">
-            {compGeral} de {totalGeral} Miss�es Conclu�das
+            {compGeral} de {totalGeral} Miss?es Conclu?das
           </div>
         </div>
       </div>
 
-      {/* 2. CARDS DAS TRILHAS ESPEC�FICAS */}
+      {/* 2. CARDS DAS TRILHAS ESPEC?FICAS */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Trilha Qualidade */}

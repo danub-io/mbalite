@@ -18,7 +18,7 @@ export default function ProgressGuard({ requiredId, fallbackLink }) {
         <div className="text-7xl mb-6">??</div>
         <h1 className="text-4xl font-black mb-4 text-center">Acesso Restrito</h1>
         <p className="text-xl text-slate-400 text-center max-w-md leading-relaxed">
-          Voc� precisa concluir a li��o anterior para desbloquear esta etapa da trilha.
+          Voc? precisa concluir a li??o anterior para desbloquear esta etapa da trilha.
         </p>
         <p className="mt-10 text-sm font-bold text-indigo-400 uppercase tracking-widest animate-pulse">
           Redirecionando de volta...
