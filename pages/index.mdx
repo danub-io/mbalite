@@ -4,7 +4,7 @@ title: MBA Lite - Acelere sua Carreira
 
 <div className="w-full font-sans -mt-8">
 
-  {/* 1. HERO SECTION (A Promessa Principal) */}
+  {/* 1. HERO SECTION */}
   <div className="bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center shadow-2xl mb-20 relative overflow-hidden border-4 border-slate-800">
     <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full"></div>
     <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-600/20 blur-3xl rounded-full"></div>
@@ -20,11 +20,10 @@ title: MBA Lite - Acelere sua Carreira
         </span>
       </h1>
       <div className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-medium leading-relaxed">
-        Domine Gestão de Qualidade, Liderança de Pessoas e Execução de Projetos em 45 lições diretas ao ponto.
+        Domine Gestão de Qualidade, Liderança de Pessoas e Execução de Projetos em 45 lições diretas ao ponto. A prática do mercado corporativo, sem a enrolação acadêmica.
       </div>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        {/* Note o link para /central agora */}
         <a href="/mbalite/central" className="bg-indigo-600 text-white font-black text-lg py-5 px-10 rounded-2xl shadow-xl hover:scale-105 transition-all uppercase tracking-widest">
           Começar Formação ➔
         </a>
@@ -32,35 +31,74 @@ title: MBA Lite - Acelere sua Carreira
     </div>
   </div>
 
-  {/* 2. AS 3 TRILHAS */}
+  {/* 2. A DOR DO MERCADO */}
+  <div className="text-center max-w-4xl mx-auto mb-20 px-4">
+    <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-6">
+      O mercado não paga pelo seu diploma. <br/> Ele paga pelos seus <span className="text-indigo-600 dark:text-indigo-400">resultados.</span>
+    </h2>
+    <div className="text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+      A maioria dos MBAs tradicionais foca em teorias do século passado. Nós dissecamos o que as empresas mais inovadoras do mundo fazem hoje e transformamos em um sistema de microlearning prático.
+    </div>
+  </div>
+
+  {/* 3. A SOLUÇÃO (As 3 Trilhas) */}
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-6xl mb-6">🏆</div>
-      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Qualidade</h3>
-      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Elimine o caos operacional com Lean e Seis Sigma.</div>
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800 hover:border-indigo-500 transition-colors group">
+      <div className="text-6xl mb-6 group-hover:scale-110 transition-transform origin-left">🏆</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-4">1. Qualidade</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium leading-relaxed">
+        Aprenda a eliminar o caos operacional com Lean, PDCA e ISO 9001. Desenhe processos que não dependem de heróis.
+      </div>
       <a href="/mbalite/qualidade/mentalidade" className="text-indigo-600 dark:text-indigo-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
 
-    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-6xl mb-6">🧠</div>
-      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Pessoas</h3>
-      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Liderança situacional e cultura de alta performance.</div>
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800 hover:border-purple-500 transition-colors group">
+      <div className="text-6xl mb-6 group-hover:scale-110 transition-transform origin-left">🧠</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-4">2. Pessoas</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium leading-relaxed">
+        Liderança situacional, feedback de elite e cultura organizacional. O diferencial competitivo humano.
+      </div>
       <a href="/mbalite/pessoas/lideranca" className="text-purple-600 dark:text-purple-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
 
-    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800">
-      <div className="text-6xl mb-6">🚀</div>
-      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase mb-4">Projetos</h3>
-      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium">Domine Scrum, Kanban e a execução implacável.</div>
+    <div className="bg-white dark:bg-slate-900 p-10 rounded-[2.5rem] shadow-xl border-2 border-slate-100 dark:border-slate-800 hover:border-orange-500 transition-colors group">
+      <div className="text-6xl mb-6 group-hover:scale-110 transition-transform origin-left">🚀</div>
+      <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight mb-4">3. Projetos</h3>
+      <div className="text-slate-500 dark:text-slate-400 mb-8 font-medium leading-relaxed">
+        Metodologias Ágeis, Scrum e Kanban. Domine a execução e garanta os resultados financeiros.
+      </div>
       <a href="/mbalite/projetos/introducao" className="text-orange-600 dark:text-orange-400 font-black uppercase tracking-widest hover:underline">Ver Módulo ➔</a>
     </div>
   </div>
 
-  {/* 3. CTA FINAL */}
+  {/* 4. PROVA SOCIAL / METODOLOGIA */}
+  <div className="bg-indigo-50 dark:bg-indigo-900/10 border border-indigo-100 dark:border-indigo-900/30 rounded-[3rem] p-10 md:p-16 mb-20 flex flex-col md:flex-row items-center gap-10">
+    <div className="md:w-1/2">
+      <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight mb-6">
+        Aprenda fazendo. Prove que sabe.
+      </h2>
+      <ul className="space-y-4 text-lg text-slate-600 dark:text-slate-400 font-medium list-none p-0">
+        <li className="flex items-center gap-3"><span className="text-indigo-600">✔</span> Aulas em vídeo diretas ao ponto.</li>
+        <li className="flex items-center gap-3"><span className="text-indigo-600">✔</span> Testes de aprovação com nota de corte de 80%.</li>
+        <li className="flex items-center gap-3"><span className="text-indigo-600">✔</span> Progresso gamificado com cadeado anti-fraude.</li>
+      </ul>
+    </div>
+    <div className="md:w-1/2 flex justify-center">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-2xl border-4 border-slate-100 dark:border-slate-800 text-center">
+        <div className="text-5xl mb-4">🏆</div>
+        <div className="text-2xl font-black text-slate-900 dark:text-white">Certificado Elite</div>
+        <div className="text-slate-500 mt-2 font-medium">Conclua as 45 lições para desbloquear seu novo nível.</div>
+      </div>
+    </div>
+  </div>
+
+  {/* 5. CTA FINAL */}
   <div className="text-center pb-20">
-    <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-8">Pronto para o próximo nível?</h2>
-    <a href="/mbalite/central" className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-black text-xl py-6 px-16 rounded-[2rem] shadow-2xl hover:scale-105 transition-all uppercase tracking-widest">
-      Acessar Agora
+    <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-8">
+      Pronto para assumir o controle da sua carreira?
+    </h2>
+    <a href="/mbalite/central" className="inline-block bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-black text-xl md:text-2xl py-6 px-16 rounded-[2rem] shadow-2xl hover:scale-105 transition-all uppercase tracking-widest">
+      Acessar Gratuitamente
     </a>
   </div>
 
