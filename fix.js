@@ -5,21 +5,42 @@ const { execSync } = require('child_process');
 const ignoreDirs = ['node_modules', '.git', '.next', 'out'];
 const allowedExtensions = ['.mdx', '.tsx', '.ts', '.html', '.json'];
 
-// NOVAS REGRAS DE LIMPEZA
-const fixes = [
-    // Erros de codificação direta
+// --- DICIONÁRIO DE REESCRITA: MÓDULO QUALIDADE ---
+const qualityFixes = [
+    // Termos de Qualidade e Processos
+    ["diferenía", "diferença"],
+    ["padrío", "padrão"],
+    ["padríes", "padrões"],
+    ["gestío", "gestão"],
+    ["aíío", "ação"],
+    ["açíes", "ações"],
+    ["situaíío", "situação"],
+    ["inspeíío", "inspeção"],
+    ["preveníío", "prevenção"],
+    ["correíío", "correção"],
+    ["melhoria contínua", "melhoria contínua"],
+    ["eficiíncia", "eficiência"],
+    ["eficícia", "eficácia"],
+    ["ferramenta de qualidade", "ferramenta de qualidade"],
+    ["contínuos", "contínuos"],
+    ["repetitivos", "repetitivos"],
+    ["estatístico", "estatístico"],
+
+    // Erros de codificação (fantasmas)
     ["misses", "missões"],
     ["concludas", "concluídas"],
-    ["Misses", "Missões"],
-    ["Concludas", "Concluídas"],
-    ["diferenía", "diferença"],
-    
-    // Regras de layout e interrogações
-    ["'Projeto'í", "'Projeto'?"],
-    ["'Processo'í", "'Processo'?"],
+    ["tím", "têm"],
+    ["alím", "além"],
+    ["atí", "até"],
+    ["vocí", "você"],
+    ["ínico", "único"],
+
+    // Ajustes de Casing e Gramática
+    [" São ", " são "],
     ["preJuízo", "prejuízo"],
     ["s? age", "só age"],
-    ["J? ocorreu", "já ocorreu"]
+    ["J? ocorreu", "já ocorreu"],
+    ["MBA Lite © Todos", "MBA Lite © Todos"]
 ];
 
 function walkDir(dir, callback) {
@@ -40,23 +61,26 @@ function processFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let original = content;
 
-    // 1. Regex para interrogações (Ex: Projeto'í ou Projeto í)
-    content = content.replace(/í([\s\r\n])/g, '?$1');
+    // 1. CORREÇÃO DE INTERROGAÇÃO (A lógica mais importante para as perguntas)
+    // Procura por qualquer palavra terminada em 'í' seguida de espaço ou quebra de linha
+    // Ex: Projeto'í -> Projeto'? | Projeto í -> Projeto?
+    content = content.replace(/([a-zA-ZÀ-ÿ0-9'"]+)í([\s\r\n])/g, '$1?$2');
+    content = content.replace(/í\?/g, '?'); // Remove se ficou 'í?'
 
-    // 2. Aplicar dicionário
-    fixes.forEach(([oldText, newText]) => {
+    // 2. APLICAÇÃO DO DICIONÁRIO DE QUALIDADE
+    qualityFixes.forEach(([oldText, newText]) => {
         content = content.split(oldText).join(newText);
     });
 
     if (content !== original) {
         fs.writeFileSync(filePath, content, 'utf8');
-        console.log(`✅ Higienizado: ${filePath}`);
+        console.log(`✅ Qualidade Restaurada: ${filePath}`);
         return true;
     }
     return false;
 }
 
-console.log("🚀 Iniciando faxina nas missões e interrogações...");
+console.log("🚀 Iniciando Reescrita do Módulo de Qualidade...");
 let changedAny = false;
 
 walkDir(__dirname, (p) => {
@@ -65,11 +89,14 @@ walkDir(__dirname, (p) => {
 
 if (changedAny) {
     try {
-        execSync('git add .');
-        execSync('git commit -m "fix: limpa missoes e interrogacoes corrompidas"');
-        execSync('git push origin main');
-        console.log("\n🎉 Tudo limpo e enviado para o GitHub!");
-    } catch (e) { console.log("\n⚠️ Git: Sem alterações."); }
+        console.log("\n📦 Sincronizando com GitHub...");
+        execSync('git add .', { stdio: 'inherit' });
+        execSync('git commit -m "fix: reescrita completa perguntas qualidade e acentuacao"', { stdio: 'inherit' });
+        execSync('git push origin main', { stdio: 'inherit' });
+        console.log("\n🎉 Sucesso! Suas perguntas de Qualidade estão limpas.");
+    } catch (e) {
+        console.log("\n⚠️ Git: Nada novo para subir.");
+    }
 } else {
-    console.log("\n✨ Nada encontrado para limpar.");
+    console.log("\n✨ Nenhum erro ortográfico de Qualidade encontrado.");
 }
