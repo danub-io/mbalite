@@ -1,4 +1,4 @@
-// Example from https://beta.reactJás.org/learn
+// Example from https://beta.reactJs.org/learn
 
 import { useState } from 'react'
 import styles from './counters.module.css'

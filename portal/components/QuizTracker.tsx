@@ -125,7 +125,7 @@ export default function QuizTracker({ id, nextStep, nextLink, videoUrl, question
 
             {/* Bot?o para avan?ar s? aparece depois que o aluno responde */}
             {isAnswered && (
-              <div className="mt-8 flex Jáustify-end">
+              <div className="mt-8 flex Justify-end">
                 <button
                   onClick={handleNextQuestion}
                   className="bg-indigo-600 text-white font-black py-3 px-8 rounded-xl hover:bg-indigo-700 transition-all uppercase tracking-wide shadow-md"

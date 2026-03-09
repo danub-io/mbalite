@@ -16,8 +16,8 @@ export default function Dashboard() {
   // Configuração das metas (45 li🏆es no total)
   const totalQualidade = 15;
   const totalPessoas = 15;
-  const totalProJáetos = 15;
-  const totalGeral = totalQualidade + totalPessoas + totalProJáetos;
+  const totalProJetos = 15;
+  const totalGeral = totalQualidade + totalPessoas + totalProJetos;
 
   // Fun🏆o que varre a mem?ria e conta quantas li🏆es o aluno concluiu em cada trilha
   const calcTrilha = (prefix, total) => {
@@ -31,13 +31,13 @@ export default function Dashboard() {
 
   const compQualidade = calcTrilha('qualidade', totalQualidade);
   const compPessoas = calcTrilha('pessoas', totalPessoas);
-  const compProJáetos = calcTrilha('proJáetos', totalProJáetos);
-  const compGeral = compQualidade + compPessoas + compProJáetos;
+  const compProJetos = calcTrilha('proJetos', totalProJetos);
+  const compGeral = compQualidade + compPessoas + compProJetos;
 
   // C?lculo das porcentagens de conclusão
   const percQualidade = Math.round((compQualidade / totalQualidade) * 100);
   const percPessoas = Math.round((compPessoas / totalPessoas) * 100);
-  const percProJáetos = Math.round((compProJáetos / totalProJáetos) * 100);
+  const percProJetos = Math.round((compProJetos / totalProJetos) * 100);
   const percGeral = Math.round((compGeral / totalGeral) * 100);
 
   // Subcomponente visual da barra
@@ -54,7 +54,7 @@ export default function Dashboard() {
     <div className="my-10 font-sans">
       
       {/* 1. CARD PRINCIPAL: PROGRESSO GLOBAL */}
-      <div className="bg-slate-900 text-white p-8 md:p-12 rounded-[2rem] shadow-2xl mb-12 flex flex-col md:flex-row items-center Jáustify-between border-4 border-slate-800 relative overflow-hidden">
+      <div className="bg-slate-900 text-white p-8 md:p-12 rounded-[2rem] shadow-2xl mb-12 flex flex-col md:flex-row items-center Justify-between border-4 border-slate-800 relative overflow-hidden">
         {/* Detalhe visual de fundo */}
         <div className="absolute -right-10 -top-10 text-9xl opacity-5">🏆</div>
         
@@ -84,7 +84,7 @@ export default function Dashboard() {
             <div className="text-4xl bg-indigo-100 dark:bg-indigo-900/30 p-3 rounded-2xl">🏆</div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Qualidade</h3>
           </div>
-          <div className="flex Jáustify-between items-end mb-2">
+          <div className="flex Justify-between items-end mb-2">
             <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compQualidade} / {totalQualidade} Aulas</p>
             <span className="text-3xl font-black text-indigo-600 dark:text-indigo-400">{percQualidade}%</span>
           </div>
@@ -97,24 +97,24 @@ export default function Dashboard() {
             <div className="text-4xl bg-purple-100 dark:bg-purple-900/30 p-3 rounded-2xl">🏆</div>
             <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">Pessoas</h3>
           </div>
-          <div className="flex Jáustify-between items-end mb-2">
+          <div className="flex Justify-between items-end mb-2">
             <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compPessoas} / {totalPessoas} Aulas</p>
             <span className="text-3xl font-black text-purple-600 dark:text-purple-400">{percPessoas}%</span>
           </div>
           <ProgressBar percent={percPessoas} colorClass="bg-purple-600 dark:bg-purple-500" />
         </div>
 
-        {/* Trilha ProJáetos */}
+        {/* Trilha ProJetos */}
         <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border-2 border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
           <div className="flex items-center gap-4 mb-6">
             <div className="text-4xl bg-orange-100 dark:bg-orange-900/30 p-3 rounded-2xl">🏆</div>
-            <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">ProJáetos</h3>
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">ProJetos</h3>
           </div>
-          <div className="flex Jáustify-between items-end mb-2">
-            <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compProJáetos} / {totalProJáetos} Aulas</p>
-            <span className="text-3xl font-black text-orange-600 dark:text-orange-400">{percProJáetos}%</span>
+          <div className="flex Justify-between items-end mb-2">
+            <p className="text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-xs">{compProJetos} / {totalProJetos} Aulas</p>
+            <span className="text-3xl font-black text-orange-600 dark:text-orange-400">{percProJetos}%</span>
           </div>
-          <ProgressBar percent={percProJáetos} colorClass="bg-orange-600 dark:bg-orange-500" />
+          <ProgressBar percent={percProJetos} colorClass="bg-orange-600 dark:bg-orange-500" />
         </div>
 
       </div>
