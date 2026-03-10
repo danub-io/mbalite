@@ -14,7 +14,7 @@ export default function ProgressGuard({ requiredId, fallbackLink }) {
 
   if (locked) {
     return (
-      <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center Justify-center text-white p-6">
+      <div className="fixed inset-0 z-50 bg-slate-900 flex flex-col items-center justify-center text-white p-6">
         <div className="text-7xl mb-6">🏆</div>
         <h1 className="text-4xl font-black mb-4 text-center">Acesso Restrito</h1>
         <p className="text-xl text-slate-400 text-center max-w-md leading-relaxed">
