@@ -317,6 +317,41 @@
             margin-right: auto;
         }
 
+        /* --- Números --- */
+        .stats {
+            background-color: #fff;
+            border-bottom: 1px solid rgba(10, 17, 40, 0.08);
+            padding: 56px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat b {
+            display: block;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+
+        .stat b em {
+            font-style: normal;
+            color: var(--accent-color);
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            color: #5A6A7E;
+        }
+
         /* --- Série de Livros --- */
         .books {
             background-color: #fff;
@@ -666,6 +701,64 @@
                 margin-top: 0.5rem;
             }
         }
+
+        /* --- FAQ --- */
+        .faq {
+            background-color: #f4f6f9;
+        }
+
+        .faq-list {
+            max-width: 760px;
+            margin: 0 auto;
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid rgba(10, 17, 40, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .faq-item[open] {
+            border-color: rgba(42, 125, 225, 0.4);
+            box-shadow: 0 12px 28px -16px rgba(42, 125, 225, 0.35);
+        }
+
+        .faq-item summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.1rem 1.3rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary i {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item[open] summary i {
+            transform: rotate(180deg);
+        }
+
+        .faq-body {
+            padding: 0 1.3rem 1.2rem;
+            color: #5A6A7E;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
     </style>
 </head>
 <body>
@@ -710,6 +803,17 @@
             </div>
         </div>
     </header>
+
+    <!-- Números -->
+    <section class="stats" id="numeros">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat"><b>15<em>+</em></b><span>anos de experiência prática</span></div>
+                <div class="stat"><b>3</b><span>livros da série MBA lite</span></div>
+                <div class="stat"><b>3</b><span>segmentos, de Óleo &amp; Gás a IA</span></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Série de Livros -->
     <section class="books" id="books">
@@ -795,6 +899,37 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Perguntas <span style="color: var(--accent-color);">frequentes</span></h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>O treinamento MBA lite já está disponível? <i class="fas fa-chevron-down"></i></summary>
+                    <div class="faq-body"><p>Está em produção final. Entrando na Lista VIP você recebe agora uma amostra gratuita do e-book e terá acesso antecipado assim que abrir.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Para quem é o MBA lite? <i class="fas fa-chevron-down"></i></summary>
+                    <div class="faq-body"><p>Para gestores, coordenadores, líderes técnicos e profissionais que assumiram (ou vão assumir) posições de liderança e querem método prático, sem excesso de teoria.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Preciso de formação prévia em gestão? <i class="fas fa-chevron-down"></i></summary>
+                    <div class="faq-body"><p>Não. A proposta do MBA lite é justamente traduzir metodologias complexas em práticas acessíveis, para você aplicar desde a primeira semana.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Como recebo a amostra do e-book? <i class="fas fa-chevron-down"></i></summary>
+                    <div class="faq-body"><p>Imediatamente após confirmar seu e-mail na Lista VIP. Sem custo e sem spam.</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>Meus dados estão seguros? <i class="fas fa-chevron-down"></i></summary>
+                    <div class="faq-body"><p>Sim. Seguimos a LGPD e você pode cancelar o recebimento dos e-mails a qualquer momento.</p></div>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer class="footer" id="contact">
         <div class="container">
@@ -813,6 +948,7 @@
                         <li><a href="#books">Série de Livros</a></li>
                         <li><a href="#training">Treinamento</a></li>
                         <li><a href="#about">Sobre o Autor</a></li>
+                        <li><a href="#faq">Perguntas Frequentes</a></li>
                     </ul>
                 </div>
                 <div>
