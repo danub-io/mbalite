@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-label="E-book Gestão de Pessoas para Alta Performance">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1128"/>
+      <stop offset="1" stop-color="#1A2A4A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#2A7DE1" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#2A7DE1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <rect width="600" height="400" fill="url(#glow)"/>
+
+  <!-- livro estilizado à direita -->
+  <g transform="translate(392, 78)" opacity="0.16">
+    <rect x="0" y="18" width="18" height="168" rx="3" fill="#FFFFFF"/>
+    <path d="M26 14 Q52 2 78 16 L78 186 Q52 172 26 184 Z" fill="#FFFFFF"/>
+    <path d="M84 16 Q110 2 136 14 L136 184 Q110 172 84 186 Z" fill="#B0B8C5"/>
+    <rect x="22" y="52" width="60" height="8" rx="4" fill="#2A7DE1"/>
+    <rect x="22" y="76" width="52" height="8" rx="4" fill="#FFFFFF"/>
+    <rect x="90" y="54" width="44" height="8" rx="4" fill="#FFFFFF"/>
+    <rect x="90" y="78" width="36" height="8" rx="4" fill="#FFFFFF"/>
+  </g>
+
+  <!-- marca -->
+  <rect x="48" y="46" width="56" height="6" rx="3" fill="#2A7DE1"/>
+  <text x="48" y="94" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">MBA<tspan fill="#2A7DE1">lite</tspan></text>
+
+  <!-- título -->
+  <text x="48" y="228" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF">Gestão de Pessoas</text>
+  <text x="48" y="268" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">para Alta Performance</text>
+  <rect x="48" y="292" width="64" height="4" rx="2" fill="#2A7DE1"/>
+  <text x="48" y="330" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#B0B8C5">E-book · Série Gestão para Alta Performance</text>
+
+  <!-- chip -->
+  <rect x="48" y="350" width="92" height="30" rx="15" fill="#2A7DE1"/>
+  <text x="94" y="370" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">E-BOOK</text>
+</svg>
