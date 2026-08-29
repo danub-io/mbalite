@@ -229,11 +229,28 @@
             margin-bottom: 2.5rem;
         }
 
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-card {
+            background-color: #fff;
+            border: 1px solid #e9edf2;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            max-width: 560px;
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
         }
 
         .btn-primary {
@@ -673,8 +690,10 @@
                 gap: 2rem;
             }
 
-            .hero-image img {
-                max-width: 220px;
+            .hero-card {
+                max-width: 440px;
+                padding: 1rem;
+                gap: 0.75rem;
             }
 
             .hero-content h1 {
@@ -851,7 +870,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="img/livros-serie.webp" alt="Livros da Série MBA lite" width="1438" height="1500">
+                <div class="hero-card">
+                    <img src="img/livro-gestao-pessoas.webp" alt="Livro Gestão de Pessoas para Alta Performance" width="1080" height="1080">
+                    <img src="img/livro-gestao-qualidade.webp" alt="Livro Gestão da Qualidade para Alta Performance" width="1080" height="1080">
+                </div>
             </div>
         </div>
     </header>
